@@ -5,4 +5,6 @@ movimentacao_player();
 
 persegue_objeto("Mouse");
 
+move_camera();
+
 
