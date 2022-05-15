@@ -2,6 +2,7 @@
   "resources": [
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},"order":0,},
     {"id":{"name":"spr_efeito_tiro","path":"sprites/spr_efeito_tiro/spr_efeito_tiro.yy",},"order":2,},
+    {"id":{"name":"spr_player_atirando","path":"sprites/spr_player_atirando/spr_player_atirando.yy",},"order":3,},
     {"id":{"name":"spr_tiro_player","path":"sprites/spr_tiro_player/spr_tiro_player.yy",},"order":1,},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":0,},
     {"id":{"name":"obj_tiro_player","path":"objects/obj_tiro_player/obj_tiro_player.yy",},"order":1,},

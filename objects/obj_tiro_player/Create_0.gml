@@ -19,7 +19,7 @@ function efeito_brilho_tiro(){
 	gpu_set_blendmode(bm_normal);
 };
 
-function destroe_tiro(){
+function auto_destroe_tiro(){
 	tiro_player_auto_destroe --;
 	if(tiro_player_auto_destroe <=0) instance_destroy();
 };

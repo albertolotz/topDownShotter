@@ -9,6 +9,9 @@ tiro_player_velocidade = 5;
 tiro_player_espera = room_speed * 0.2;
 tiro_player_espera_contador = room_speed;
 
+player_atirando_frame_tempo = room_speed * 0.4;
+player_atirando_frame_tempo_contador = 0;
+
 
 
 function movimentacao_player(){
@@ -46,18 +49,33 @@ function move_camera(){
 	camera_set_view_target(camera_atual, id);
 }
 
+function aplica_frame_player_atirando(){
+	sprite_index = spr_player_atirando;
+	player_atirando_frame_tempo_contador = player_atirando_frame_tempo;
+};
+
+function aplica_frame_player_andando(){
+	if(!sprite_index=spr_player){
+		player_atirando_frame_tempo_contador --
+		if(player_atirando_frame_tempo_contador<=0) sprite_index = spr_player;
+	};
+};
+
 function player_atira(){
 	var tiro_player_direcao = alvo_direcao("Mouse");
-	
 	var btn_direito_mouse = mouse_check_button(mb_right);
 	
 	if(btn_direito_mouse && tiro_player_espera_contador <= 0){
 		tiro_player_espera_contador = tiro_player_espera;
+		aplica_frame_player_atirando();		
 		var tiro_player = instance_create_layer(x,y,"Tiros",obj_tiro_player);
-		
-		tiro_player.speed = tiro_player_velocidade;
-		tiro_player.image_angle = tiro_player_direcao;
-		tiro_player.direction =tiro_player_direcao;
+			tiro_player.speed = tiro_player_velocidade;
+			tiro_player.image_angle = tiro_player_direcao;
+			tiro_player.direction =tiro_player_direcao;
 	};
+	
 	tiro_player_espera_contador --;
+	aplica_frame_player_andando();
 };
+
+
