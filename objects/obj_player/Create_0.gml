@@ -5,14 +5,19 @@ velocidade_player = 5;
 velocidade_vertical_player = 0;
 velocidade_horizontal_player = 0;
 
+tiro_player_velocidade = 5;
+tiro_player_espera = room_speed * 0.2;
+tiro_player_espera_contador = room_speed;
+
+
 
 function movimentacao_player(){
 	var left, right, up, down, player_em_movimento;
 
-	left = keyboard_check(vk_left);
-	right = keyboard_check(vk_right);
-	up = keyboard_check(vk_up);
-	down = keyboard_check(vk_down);
+	left = keyboard_check(ord("A"));
+	right = keyboard_check(ord("D"));
+	up = keyboard_check(ord("W"));
+	down = keyboard_check(ord("S"));
 
 	velocidade_vertical_player = (down - up) * velocidade_player;
 	velocidade_horizontal_player = (right - left) * velocidade_player;
@@ -24,8 +29,12 @@ function movimentacao_player(){
 	if(player_em_movimento == 0) image_index = 1;
 };
 
-function persegue_objeto(objeto){
-	if(objeto=="Mouse") image_angle = point_direction(x,y, mouse_x, mouse_y);
+function alvo_direcao(objeto){
+	if(objeto=="Mouse") return point_direction(x,y, mouse_x, mouse_y);
+}
+
+function persegue(objeto){
+	if(objeto=="Mouse") image_angle =  point_direction(x,y, mouse_x, mouse_y);
 }
 
 function move_camera(){
@@ -36,3 +45,19 @@ function move_camera(){
 	camera_set_view_border(camera_atual, borda_horizontal ,borda_vertical);
 	camera_set_view_target(camera_atual, id);
 }
+
+function player_atira(){
+	var tiro_player_direcao = alvo_direcao("Mouse");
+	
+	var btn_direito_mouse = mouse_check_button(mb_right);
+	
+	if(btn_direito_mouse && tiro_player_espera_contador <= 0){
+		tiro_player_espera_contador = tiro_player_espera;
+		var tiro_player = instance_create_layer(x,y,"Tiros",obj_tiro_player);
+		
+		tiro_player.speed = tiro_player_velocidade;
+		tiro_player.image_angle = tiro_player_direcao;
+		tiro_player.direction =tiro_player_direcao;
+	};
+	tiro_player_espera_contador --;
+};

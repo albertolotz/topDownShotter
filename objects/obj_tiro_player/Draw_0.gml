@@ -1,12 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-movimentacao_player();
-
-persegue("Mouse");
-
-move_camera();
-
-player_atira();
 
 
+efeito_brilho_tiro();
