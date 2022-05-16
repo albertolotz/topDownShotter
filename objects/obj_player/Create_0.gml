@@ -5,7 +5,7 @@ velocidade_player = 5;
 velocidade_vertical_player = 0;
 velocidade_horizontal_player = 0;
 
-tiro_player_velocidade = 5;
+tiro_player_velocidade = 6;
 tiro_player_espera = room_speed * 0.2;
 tiro_player_espera_contador = room_speed;
 

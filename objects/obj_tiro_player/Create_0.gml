@@ -7,6 +7,7 @@ escala_tamanho_tiro_y = escala_tamanho_tiro_x;
 tiro_player_auto_destroe = room_speed * 6;
 
 
+
 function regride_tamanho_tiro(){
 	escala_tamanho_tiro_x = lerp(escala_tamanho_tiro_x, 1, 0.1);
 	escala_tamanho_tiro_y = escala_tamanho_tiro_x;
