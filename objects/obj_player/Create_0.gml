@@ -77,5 +77,5 @@ function player_atira(){
 	tiro_player_espera_contador --;
 	aplica_frame_player_andando();
 };
-
+ 
 
