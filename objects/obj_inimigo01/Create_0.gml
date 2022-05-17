@@ -5,8 +5,11 @@ randomize();
 inimigo_muda_direcao_tempo = room_speed * random_range(4, 10);
 inimigo_muda_direcao_contador = 0;
 distancia_gatilho_persegue_player = 200;
-inimigo_vidas_max = 2;
+//inimigo_vidas_max = 2;
 inimigo_vidas = 2;
+shake_perde_vida_inimigo = 5;
+shake_mata_inimigo = 30;
+
 
 
 function inimigo_se_movimenta(){
@@ -46,6 +49,8 @@ function registro_danos(){
 	
 		if(tiro_player){
 			instance_destroy(tiro_player_que_acertou);
+			impacto_tiro();
+			global.tremer = shake_perde_vida_inimigo;
 			inimigo_vidas --;
 		};
 		inimigo_pode_morrer();
@@ -56,6 +61,7 @@ function inimigo_pode_morrer(){
 	if(inimigo_vidas <= 0){
 		instance_destroy();
 		explode_inimigo();
+		global.tremer = shake_mata_inimigo;
 		vestigio_inimigo();
 	};
 };
@@ -70,6 +76,13 @@ function explode_inimigo(){
 function vestigio_inimigo(){
 	var vestigio = instance_create_layer(x,y,"Inimigos",obj_inimigo_vestigio);
 	vestigio.image_angle = irandom(359);
+};
+
+function impacto_tiro(){
+	 var impacto_tiro = instance_create_layer(x,y,"Tiros",obj_impacto_tiro);
+	 impacto_tiro.image_xscale = 1;
+	 impacto_tiro.image_yscale = 1;
+	 impacto_tiro.image_blend = c_red;
 };
 
 

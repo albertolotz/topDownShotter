@@ -5,6 +5,8 @@
     {"id":{"name":"spr_efeito_tiro","path":"sprites/spr_efeito_tiro/spr_efeito_tiro.yy",},"order":2,},
     {"id":{"name":"spr_player_atirando","path":"sprites/spr_player_atirando/spr_player_atirando.yy",},"order":3,},
     {"id":{"name":"spr_inimigo_vestigio","path":"sprites/spr_inimigo_vestigio/spr_inimigo_vestigio.yy",},"order":2,},
+    {"id":{"name":"obj_screenshake","path":"objects/obj_screenshake/obj_screenshake.yy",},"order":3,},
+    {"id":{"name":"obj_impacto_tiro","path":"objects/obj_impacto_tiro/obj_impacto_tiro.yy",},"order":3,},
     {"id":{"name":"spr_impacto_tiro","path":"sprites/spr_impacto_tiro/spr_impacto_tiro.yy",},"order":4,},
     {"id":{"name":"spr_tiro_player","path":"sprites/spr_tiro_player/spr_tiro_player.yy",},"order":1,},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":0,},
