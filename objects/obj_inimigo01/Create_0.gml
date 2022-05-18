@@ -18,6 +18,7 @@ cor_impacto_tiro = c_red;
 escala_inicial_impacto_tiro = 1;
 
 
+
 sexo_inimigo = choose("spr_inimigo_femea","spr_inimigo_macho");
 if(sexo_inimigo=="spr_inimigo_femea") sprite_index = spr_inimigo_femea;
 
@@ -27,12 +28,10 @@ function acasalando(){
 	if(encontro != noone){
 		var sexo_meu = sprite_get_name(sprite_index);
 		var sexo_colisao = sprite_get_name(encontro.sprite_index);
-		show_debug_message(sexo_colisao + "|" + sexo_meu);
 		if(sexo_meu != sexo_colisao){
 			instance_create_layer(x,y,"Inimigos", obj_inimigo02);
 			instance_destroy(encontro);
 			instance_destroy(self.id);
-			show_debug_message(sexo_colisao + "|" + sexo_meu + "acasalou");
 		};
 	};
 };

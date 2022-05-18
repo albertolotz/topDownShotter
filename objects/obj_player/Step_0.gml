@@ -9,4 +9,8 @@ move_camera();
 
 player_atira();
 
+player_perde_vida();
+
+player_brilhando();
+
 

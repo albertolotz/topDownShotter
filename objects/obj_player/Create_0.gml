@@ -12,6 +12,13 @@ tiro_player_espera_contador = room_speed;
 player_atirando_frame_tempo = room_speed * 0.4;
 player_atirando_frame_tempo_contador = 0;
 
+player_vidas = 20;
+
+player_invencivel_tempo = room_speed * 3;
+player_invencivel_tempo_contador = 0;
+
+player_pode_piscar = false;
+valor_alpha = 0.05;
 
 
 function movimentacao_player(){
@@ -78,4 +85,36 @@ function player_atira(){
 	aplica_frame_player_andando();
 };
 
+function player_perde_vida(){
 
+	colisao = instance_place(x,y,obj_inimigo_pai);
+	
+	if(player_invencivel_tempo_contador>=0) player_invencivel_tempo_contador --;
+	if(player_invencivel_tempo_contador <= 0){
+		if(colisao != noone){
+			player_vidas -= colisao.dano_inimigo;
+			show_debug_message(player_vidas);
+			player_invencivel_tempo_contador = player_invencivel_tempo;
+			player_pode_piscar = true;
+		};
+	
+		if(player_vidas < 0){
+			instance_destroy();
+			show_message("morreu");
+			//debug
+			room_restart();
+		};
+	};
+};
+
+function player_brilhando(){
+	if(player_pode_piscar){
+		image_alpha *= 0.95;
+		if(image_alpha<=0.2) image_alpha = 1;
+		
+		if(player_invencivel_tempo_contador<=0){
+			player_pode_piscar=false;
+			image_alpha=1;
+		};
+	};
+};

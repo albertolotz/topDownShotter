@@ -17,6 +17,7 @@
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":0,},
     {"id":{"name":"obj_tiro_player","path":"objects/obj_tiro_player/obj_tiro_player.yy",},"order":1,},
     {"id":{"name":"spr_inimigo_macho","path":"sprites/spr_inimigo_macho/spr_inimigo_macho.yy",},"order":0,},
+    {"id":{"name":"obj_control","path":"objects/obj_control/obj_control.yy",},"order":4,},
     {"id":{"name":"spr_inimigo_ovo","path":"sprites/spr_inimigo_ovo/spr_inimigo_ovo.yy",},"order":5,},
     {"id":{"name":"obj_inimigo_pai","path":"objects/obj_inimigo_pai/obj_inimigo_pai.yy",},"order":4,},
     {"id":{"name":"Sprite9","path":"sprites/Sprite9/Sprite9.yy",},"order":15,},

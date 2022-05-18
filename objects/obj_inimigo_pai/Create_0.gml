@@ -14,7 +14,7 @@ pedacos_inimigo_min = 4;
 pedacos_inimigo_max = 14;
 cor_impacto_tiro = c_red;
 escala_inicial_impacto_tiro = 1;
-
+dano_inimigo = 5;
 
 
 
@@ -42,7 +42,7 @@ function gerencia_colisao(){
 		var sexo_colisao = sprite_get_name(colisao_com.sprite_index);
 		
 		if(sexo_meu == sexo_colisao){
-			direction *= -90;
+			direction = direction + 180;
 			speed = 2;
 		};
 	};
