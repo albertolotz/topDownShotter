@@ -16,7 +16,6 @@ pedacos_inimigo_min = 20;
 pedacos_inimigo_max = 30;
 cor_impacto_tiro = c_lime;
 escala_inicial_impacto_tiro = 2;
-
 // variaveis especiais
 
 function botar_ovo(){

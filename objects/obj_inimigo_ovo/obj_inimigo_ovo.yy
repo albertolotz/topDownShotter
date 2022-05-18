@@ -1,16 +1,13 @@
 {
   "spriteId": {
-    "name": "spr_inimigo_macho",
-    "path": "sprites/spr_inimigo_macho/spr_inimigo_macho.yy",
+    "name": "spr_inimigo_ovo",
+    "path": "sprites/spr_inimigo_ovo/spr_inimigo_ovo.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "obj_inimigo_pai",
-    "path": "objects/obj_inimigo_pai/obj_inimigo_pai.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -24,6 +21,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
+    {"isDnD":false,"eventNum":7,"eventType":7,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
@@ -34,7 +32,7 @@
     "path": "folders/Objects/Inimigo.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_inimigo01",
+  "name": "obj_inimigo_ovo",
   "tags": [],
   "resourceType": "GMObject",
 }

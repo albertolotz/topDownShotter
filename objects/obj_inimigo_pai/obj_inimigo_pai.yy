@@ -1,16 +1,13 @@
 {
   "spriteId": {
-    "name": "spr_inimigo_macho",
-    "path": "sprites/spr_inimigo_macho/spr_inimigo_macho.yy",
+    "name": "spr_obj_pai",
+    "path": "sprites/spr_obj_pai/spr_obj_pai.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "obj_inimigo_pai",
-    "path": "objects/obj_inimigo_pai/obj_inimigo_pai.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -34,7 +31,7 @@
     "path": "folders/Objects/Inimigo.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_inimigo01",
+  "name": "obj_inimigo_pai",
   "tags": [],
   "resourceType": "GMObject",
 }
