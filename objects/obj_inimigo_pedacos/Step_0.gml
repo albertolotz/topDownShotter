@@ -4,8 +4,8 @@
 //destroe_pedacos();
 //explosao();
 
-speed *= 0.9;
-image_alpha -= 0.005;
+
+image_alpha -= 0.003;
 if(image_alpha <= 0) instance_destroy();
 
 

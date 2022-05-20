@@ -15,7 +15,7 @@ player_brilhando();
 
 passa_level();
 
-local_bussula();
+
 
 inimigos02_vivos = consulta_inimigos_vivos(obj_inimigo02);
 inimigos01_vivos = consulta_inimigos_vivos(obj_inimigo01);

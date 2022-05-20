@@ -9,10 +9,8 @@ tiro_player_velocidade = 6;
 tiro_player_espera = room_speed * 0.2;
 tiro_player_espera_contador = room_speed;
 
-player_atirando_frame_tempo = room_speed * 0.4;
+player_atirando_frame_tempo = room_speed * 0.2;
 player_atirando_frame_tempo_contador = 0;
-
-player_vidas = 20;
 
 player_invencivel_tempo = room_speed * 3;
 player_invencivel_tempo_contador = 0;
@@ -39,6 +37,12 @@ function movimentacao_player(){
 	
 	player_em_movimento = velocidade_horizontal_player + velocidade_vertical_player;
 	if(player_em_movimento == 0) image_index = 1;
+	
+	//ficando dentro da room
+	var desconto_largura_sprite = sprite_width/2;
+	var desconto_altura_sprite = sprite_height/2;
+	x=clamp(x,desconto_largura_sprite, room_width-desconto_largura_sprite);
+	y=clamp(y,desconto_altura_sprite, room_height-desconto_altura_sprite);
 };
 
 function alvo_direcao(objeto){
@@ -64,7 +68,7 @@ function aplica_frame_player_atirando(){
 };
 
 function aplica_frame_player_andando(){
-	if(!sprite_index=spr_player){
+	if(sprite_index!=spr_player){
 		player_atirando_frame_tempo_contador --
 		if(player_atirando_frame_tempo_contador<=0) sprite_index = spr_player;
 	};
@@ -94,18 +98,20 @@ function player_perde_vida(){
 	if(player_invencivel_tempo_contador>=0) player_invencivel_tempo_contador --;
 	if(player_invencivel_tempo_contador <= 0){
 		if(colisao != noone){
-			player_vidas -= colisao.dano_inimigo;
-			//global.tremer(30);
+			obj_control.player_vidas -= colisao.dano_inimigo;
+			global.tremer = 20;
 			player_invencivel_tempo_contador = player_invencivel_tempo;
 			player_pode_piscar = true;
 		};
+	};
 	
-		if(player_vidas < 0){
-			instance_destroy();
-			show_message("morreu");
-			//debug
-			room_restart();
-		};
+	if(obj_control.player_vidas < 0){
+		instance_destroy();
+		var vw = camera_get_view_width(view_camera[0]) / 2;
+		var vh = camera_get_view_height(view_camera[0]) / 2;
+		camera_set_view_pos(view_camera[0], x - vw, y - vh);
+		
+		layer_sequence_create("Gameover",x,y,sq_gameover);
 	};
 };
 
@@ -136,7 +142,6 @@ function consulta_inimigos_vivos(inimigo){
 
 function passa_level(){
 		if(consulta_inimigos_vivos(obj_inimigo02) == 0 || obj_control.level > obj_control.level + 1){
-			
 			level_reinicia_contador --;
 			if(level_reinicia_contador <=0){
 				obj_control.level ++;
@@ -145,10 +150,4 @@ function passa_level(){
 			};
 		};
 };
-
-function local_bussula(){
-	obj_bussula.x = x+30;
-	obj_bussula.y = y+30;
-};
-
 

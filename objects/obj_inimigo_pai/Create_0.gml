@@ -12,13 +12,13 @@ shake_mata_inimigo = 30;
 pode_perseguir_player = true;
 velocidade_maxima_persegue_player = 2;
 pedacos_inimigo_min = 4;
-pedacos_inimigo_max = 14;
+pedacos_inimigo_max = 10;
+velocidade_pedacos_min = 0.5;
+velocidade_pedacos_max = 0.9;
 cor_impacto_tiro = c_red;
 escala_inicial_impacto_tiro = 1;
 dano_inimigo = 5;
-
-
-
+pedacos_gera_dano = true;
 
 
 function inimigo_se_movimenta(){
@@ -81,6 +81,19 @@ function registro_danos(){
 		};
 		inimigo_pode_morrer();
 	};
+	
+	if(pedacos_gera_dano){
+		if(instance_exists(obj_inimigo_pedacos)){
+			var pedaco_matador = place_meeting(x,y,obj_inimigo_pedacos);
+			var pedaco_que_matou = instance_place(x,y,obj_inimigo_pedacos);
+			if(pedaco_matador){
+				inimigo_vidas --;
+				global.tremer = shake_perde_vida_inimigo;
+				instance_destroy(pedaco_que_matou);
+			};
+		};
+		inimigo_pode_morrer();
+	};
 };
 
 function inimigo_pode_morrer(){
@@ -96,6 +109,7 @@ function explode_inimigo(){
 	var qtd_pedacos = irandom_range(pedacos_inimigo_min,pedacos_inimigo_max);
 	repeat(qtd_pedacos){
 		instance_create_layer(x,y,"Inimigos",obj_inimigo_pedacos);
+		obj_inimigo_pedacos.speed = random_range(velocidade_pedacos_min, velocidade_pedacos_max);
 	};
 };
 
