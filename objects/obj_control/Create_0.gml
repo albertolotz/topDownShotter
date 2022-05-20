@@ -2,7 +2,9 @@
 // You can write your code in this editor
 
 randomize();
-
+prev_bg = "";
+novo_bg = "";
+level = 1;
 
 function inicia_jogo(){
 	var _x = irandom_range(0+100, room_width - 100);
@@ -17,8 +19,7 @@ function inicia_jogo(){
 };
 
 function gera_inimigos(_player){
-	var numero_inimigos = irandom_range(3,6);
-	repeat(numero_inimigos){
+	repeat(level){
 		var _x_inimigo = irandom_range(0+100, room_width - 100);
 		var _y_inimigo = irandom_range(0+100, room_height - 100);
 		var inimigo = instance_create_layer(_x_inimigo+100,_y_inimigo+100,"Inimigos",obj_inimigo02); 
@@ -26,3 +27,30 @@ function gera_inimigos(_player){
 		if distancia < 200 instance_destroy(inimigo,false);
 	};
 };
+
+function tamanho_aleatorio_room(){
+ var novo_width = irandom_range(1280,4560);
+ var novo_height = irandom_range(720,3120);
+ if(novo_width) < 1280 novo_width = 1280;
+ if(novo_height) < 720 novo_height = 720;
+ 
+ room_width = novo_width;
+ room_height = novo_height;
+};
+
+function muda_bg(){
+	var lay_id = layer_get_id("Background");
+	var back_id = layer_background_get_id(lay_id);
+	
+	do
+	{
+		novo_bg = choose(spr_bg1, spr_bg2, spr_bg3);
+	}
+	until(novo_bg != prev_bg)
+	prev_bg = novo_bg;
+	
+	layer_background_sprite(back_id, novo_bg);
+};
+
+
+

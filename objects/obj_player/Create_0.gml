@@ -18,7 +18,9 @@ player_invencivel_tempo = room_speed * 3;
 player_invencivel_tempo_contador = 0;
 
 player_pode_piscar = false;
-valor_alpha = 0.05;
+
+level_reinicia_tempo = room_speed * 3;
+level_reinicia_contador = level_reinicia_tempo;
 
 
 function movimentacao_player(){
@@ -93,7 +95,7 @@ function player_perde_vida(){
 	if(player_invencivel_tempo_contador <= 0){
 		if(colisao != noone){
 			player_vidas -= colisao.dano_inimigo;
-			show_debug_message(player_vidas);
+			//global.tremer(30);
 			player_invencivel_tempo_contador = player_invencivel_tempo;
 			player_pode_piscar = true;
 		};
@@ -118,3 +120,35 @@ function player_brilhando(){
 		};
 	};
 };
+
+function consulta_inimigos_vivos(inimigo){
+	if(instance_exists(inimigo)){
+		var qtd_inimigos = instance_number(inimigo);
+	
+	
+	if (qtd_inimigos = undefined){
+		return 0;
+	}else{
+		return qtd_inimigos
+	};
+	}else{return 0};
+};
+
+function passa_level(){
+		if(consulta_inimigos_vivos(obj_inimigo02) == 0 || obj_control.level > obj_control.level + 1){
+			
+			level_reinicia_contador --;
+			if(level_reinicia_contador <=0){
+				obj_control.level ++;
+				room_restart();
+				level_reinicia_contador = level_reinicia_tempo;
+			};
+		};
+};
+
+function local_bussula(){
+	obj_bussula.x = x+30;
+	obj_bussula.y = y+30;
+};
+
+

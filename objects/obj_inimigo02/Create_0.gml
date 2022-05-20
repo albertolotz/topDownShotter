@@ -7,7 +7,7 @@ event_inherited();
 inimigo_muda_direcao_tempo = room_speed * random_range(4, 10);
 inimigo_muda_direcao_contador = 0;
 distancia_gatilho_persegue_player = 200;
-inimigo_vidas = 10;
+inimigo_vidas = 5;
 shake_perde_vida_inimigo = 10;
 shake_mata_inimigo = 100;
 pode_perseguir_player = false;

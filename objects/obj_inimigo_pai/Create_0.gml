@@ -5,7 +5,8 @@ randomize();
 inimigo_muda_direcao_tempo = room_speed * random_range(4, 10);
 inimigo_muda_direcao_contador = 0;
 distancia_gatilho_persegue_player = 200;
-inimigo_vidas = 2;
+inimigo_vidas = 1;
+inimigo_sexo = "macho"
 shake_perde_vida_inimigo = 5;
 shake_mata_inimigo = 30;
 pode_perseguir_player = true;
@@ -110,4 +111,17 @@ function impacto_tiro(){
 	 impacto_tiro.image_blend = cor_impacto_tiro;
 };
 
+
+function acasalando(){
+	encontro = instance_place(x,y,obj_inimigo_pai);
+	if(encontro != noone){
+		var sexo_meu = inimigo_sexo;
+		var sexo_colisao = encontro.inimigo_sexo;
+		if(sexo_meu != sexo_colisao){
+			instance_create_layer(x,y,"Inimigos", obj_inimigo02);
+			instance_destroy(encontro);
+			instance_destroy(self.id);
+		};
+	};
+};
 

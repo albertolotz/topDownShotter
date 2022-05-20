@@ -1,9 +1,13 @@
 {
   "resources": [
     {"id":{"name":"obj_inimigo01","path":"objects/obj_inimigo01/obj_inimigo01.yy",},"order":0,},
+    {"id":{"name":"spr_bg2","path":"sprites/spr_bg2/spr_bg2.yy",},"order":4,},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},"order":0,},
+    {"id":{"name":"obj_bussula","path":"objects/obj_bussula/obj_bussula.yy",},"order":5,},
     {"id":{"name":"spr_obj_pai","path":"sprites/spr_obj_pai/spr_obj_pai.yy",},"order":4,},
     {"id":{"name":"spr_efeito_tiro","path":"sprites/spr_efeito_tiro/spr_efeito_tiro.yy",},"order":2,},
+    {"id":{"name":"spr_bg1","path":"sprites/spr_bg1/spr_bg1.yy",},"order":2,},
+    {"id":{"name":"spr_bg3","path":"sprites/spr_bg3/spr_bg3.yy",},"order":5,},
     {"id":{"name":"spr_inimigo_femea","path":"sprites/spr_inimigo_femea/spr_inimigo_femea.yy",},"order":6,},
     {"id":{"name":"spr_player_atirando","path":"sprites/spr_player_atirando/spr_player_atirando.yy",},"order":3,},
     {"id":{"name":"spr_inimigo02","path":"sprites/spr_inimigo02/spr_inimigo02.yy",},"order":3,},
@@ -14,7 +18,9 @@
     {"id":{"name":"spr_impacto_tiro","path":"sprites/spr_impacto_tiro/spr_impacto_tiro.yy",},"order":4,},
     {"id":{"name":"obj_inimigo02","path":"objects/obj_inimigo02/obj_inimigo02.yy",},"order":6,},
     {"id":{"name":"spr_tiro_player","path":"sprites/spr_tiro_player/spr_tiro_player.yy",},"order":1,},
+    {"id":{"name":"obj_inimigo_femea","path":"objects/obj_inimigo_femea/obj_inimigo_femea.yy",},"order":8,},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":0,},
+    {"id":{"name":"spr_bussula","path":"sprites/spr_bussula/spr_bussula.yy",},"order":3,},
     {"id":{"name":"obj_tiro_player","path":"objects/obj_tiro_player/obj_tiro_player.yy",},"order":1,},
     {"id":{"name":"spr_inimigo_macho","path":"sprites/spr_inimigo_macho/spr_inimigo_macho.yy",},"order":0,},
     {"id":{"name":"obj_control","path":"objects/obj_control/obj_control.yy",},"order":4,},
